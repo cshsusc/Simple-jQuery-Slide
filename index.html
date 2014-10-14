@@ -4,25 +4,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Simple jQuery Slide</title>
 
-<link rel="stylesheet" href="styles.css" media="all" />
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="example-styles.css" media="all">
 </head>
 <body>
 
-
+<h1>Simple jQuery Slider</h1>
 <div id="slide">
-	<a href=""></a>
+	<img src="images/2.jpg" alt="" />
+	<img src="images/3.jpg" alt="" />
+	<img src="images/4.jpg" alt="" />
+	<img src="images/1.jpg" alt="" />
 </div>
+<div class="links">
+	<a href="#slide-0">Slide 1</a>
+	<a href="#slide-1">Slide 2</a>
+	<a href="#slide-2">Slide 3</a>
+	<a href="#slide-3">Slide 4</a>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="simple-jquery-slide.js"></script>
 <script type="text/javascript">
 (function(simpleSlide) {
 	simpleSlide(window.jQuery, window, document);
 }(function($, window, document) {
 	$(function() {
-		$('#slide').simpleSlide();
+		window.slider = $('#slide');
+		window.slider.simpleSlide({
+			'auto':true,
+			'bullets':true,
+			'slideSelector':'img',
+			'onInitiate':function(){
+				window.slider.find('a.arrow.prev').addClass('fa fa-hand-o-left');
+				window.slider.find('a.arrow.next').addClass('fa fa-hand-o-right');
+			}
+		});
 	});
 }));
 </script>
-
 
 </body>
 </html>

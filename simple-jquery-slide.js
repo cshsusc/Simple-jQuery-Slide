@@ -19,7 +19,7 @@
 			'bullets':false,
 			'transitionTime':500,
 			'hashChange':true,
-			'slideSelector':'.hero',
+			'slideSelector':'.slide',
 			'count':0,
 			'container':$(this),
 			//Callbacks
